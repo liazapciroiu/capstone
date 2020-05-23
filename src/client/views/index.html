@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Travel planner</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+  <div class="container bg-main">
+    <header>
+      <h1>Travel Planner</h1>
+    </header>
+    <main>
+      <section>
+        <button id="add-trip" class="boxes btn" onclick="return Client.toggleForm(event)">
+          <i class="fas fa-plus-circle"></i> Add trip
+        </button>
+        <form id="form" class="boxes" onsubmit="return Client.handleApp(event)">
+          <label for="location">My trip to: </label>
+          <input type="text" id="location" placeholder="Enter city" required />
+          <br />
+          <label for="date-checkin">Departing: </label>
+          <input type="date" id="date-checkin" required pattern="\d{2}/\d{2}/\d{4}" placeholder="dd/mm/yyyy" />
+          <br />
+          <label for="date-checkout">Returning: </label>
+          <input type="date" id="date-checkout" required pattern="\d{2}/\d{2}/\d{4}" placeholder="dd/mm/yyyy" />
+          <br />
+          <button id="save-trip" class="boxes btn" type="submit" onsubmit="return Client.handleApp(event)">Save
+            trip</button>
+          <button id="remove-trip" class="boxes btn" type="reset">Remove trip</button>
+        </form>
+      </section>
+      <h2>My upcoming trips</h2>
+      <section id="trip-cards">
+        <article class="card bg-card">
+          <img src="../media/rome.jpg" alt="Colosseum, Roma, Italy" id="rome" />
+          <div class="card-text">
+            <h3>My trip to Rome</h3>
+            <p><span>Check-in: </span>25/05/2021</p>
+            <p><span>Check-out: </span>30/05/2021</p>
+            <p><span>Days left: </span>365</p>
+            <p><span>Length of trip: </span>5 nights</p>
+            <p><span>Weather tomorrow: </span>High - 35, Low - 26</p>
+            <p>Mostly cloudy throughout the day.</p>
+            <button id="remove-trip" class="boxes btn" onclick="return Client.removeTrip(event)">Remove trip</button>
+          </div>
+        </article>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>&copy; Lia Zapciroiu 2020 - Udacity FEND project</p>
+    </footer>
+  </div>
+
+  <script>
+    // Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js');
+      });
+    }
+  </script>
+</body>
+
+</html>

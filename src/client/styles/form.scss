@@ -1,0 +1,28 @@
+form {
+  padding: 1rem;
+  display: none;
+}
+
+label {
+  font-weight: bold;
+  line-height: 1.6;
+}
+
+input {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: $placeholderTextColor;
+  font-size: 16px;
+
+  &:focus {
+    border: 2px solid $darkTextColor;
+  }
+
+  @include tablet {
+    font-size: 26px;
+  }
+
+  @include desktop {
+    font-size: 30px;
+  }
+}

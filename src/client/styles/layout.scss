@@ -1,0 +1,25 @@
+body {
+  background-color: $bgMainColor;
+  @include tablet {
+    background-image: url(../media/Aare.png);
+    background-size: contain;
+    background-color: $lightTextColor;
+  }
+}
+
+.container {
+  width: 85vw;
+  margin: 0 auto;
+  @include tablet {
+    padding: 0 3rem;
+    margin: 1rem auto;
+  }
+}
+
+header {
+  padding: 2rem 0 0.5rem 0;
+}
+
+footer {
+  padding: 2rem 0;
+}

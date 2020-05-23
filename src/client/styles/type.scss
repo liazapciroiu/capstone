@@ -1,0 +1,49 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+span {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 26px;
+
+  @include tablet {
+    font-size: 36px;
+  }
+
+  @include desktop {
+    font-size: 40px;
+  }
+}
+
+button,
+h2,
+h3 {
+  font-size: 20px;
+
+  &#add-trip {
+    text-transform: uppercase;
+  }
+
+  @include tablet {
+    font-size: 30px;
+  }
+}
+
+p, label {
+  font-size: 16px;
+
+  span {
+    font-weight: bold;
+  }
+
+  @include tablet {
+    font-size: 26px;
+  }
+}

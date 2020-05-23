@@ -1,0 +1,49 @@
+$bgMainColor: #ffedbf;
+$bgCardColor: #e5e0d5;
+$darkTextColor: #463c74;
+$lightTextColor: #fbf4e2;
+$placeholderTextColor: #8d8980;
+
+.bg-main {
+  background-color: $bgMainColor;
+  color: $darkTextColor;
+}
+
+.bg-card {
+  background-color: $bgCardColor;
+}
+
+.boxes {
+  border: 2px solid $darkTextColor;
+  border-radius: 5px;
+  margin: 0.5rem 0;
+
+  @include tablet {
+    border-width: 3px;
+    border-radius: 15px;
+  }
+}
+
+button.btn {
+  background-color: rgba(0, 0, 0, 0);
+  color: $darkTextColor;
+  padding: 0.5rem;
+  margin: 0.5rem 0.5rem 0 0;
+
+  &:active {
+    -webkit-box-shadow: 5px 5px 5px -4px rgba(0, 0, 0, 0.58);
+    -moz-box-shadow: 5px 5px 5px -4px rgba(0, 0, 0, 0.58);
+    box-shadow: 5px 5px 5px -4px rgba(0, 0, 0, 0.58);
+  }
+
+  &:hover,
+  &#remove-trip {
+    background-color: $darkTextColor;
+    color: $lightTextColor;
+  }
+
+  &#remove-trip:hover {
+    background-color: rgba(252, 248, 248, 0.644);
+    color: $darkTextColor;
+  }
+}

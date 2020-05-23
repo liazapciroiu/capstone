@@ -1,0 +1,32 @@
+h2 {
+  margin: 1rem 0;
+}
+
+article {
+  margin-top: 1rem;
+  .card-text {
+    padding: 1rem;
+    line-height: 1.5;
+    text-align: center;
+
+    @include tablet {
+      text-align: left;
+    }
+  }
+
+  @include tablet {
+    padding: 1rem;
+  }
+
+  @include desktop {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    .card-text {
+      padding: 0 1rem;
+      h3 {
+        line-height: 0;
+        padding: 1rem 0;
+      }
+    }
+  }
+}
